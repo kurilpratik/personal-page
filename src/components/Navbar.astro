@@ -6,13 +6,13 @@ import Button from './Button.astro';
 <nav>
     <div class="logo flex justify-center items-center">
         <img src="/src/assets/logo.svg" alt="Logo">
-        <h3 class="text- l">Pratik Kuril</h3>
+        <h3 class="text- l font-semibold">Pratik Kuril</h3>
     </div>
     <ul> 
         {
             NavData.map((item) => (
-                <li>
-                    <NavLink href={item.href}>{item.title}</NavLink>
+                <li> 
+                    <NavLink href={item.href} class:list={'font-semibold'}>{item.title}</NavLink>
                 </li>
             ))
         }
@@ -20,11 +20,9 @@ import Button from './Button.astro';
     </ul>
 </nav>
 
-<style lang="scss" is:global>
-    @use '../styles/styles.scss';
+<style is:global>
 
     nav{
-        // width: $container-desktop;
         width: 80%;
         //border: rgba($color: #000000, $alpha: 0.3) solid 1.5px;
         border-radius: 2rem;
@@ -35,7 +33,7 @@ import Button from './Button.astro';
         display: flex;
         justify-content: space-between;
         align-items: center;
-        position: absolute;
+        position: fixed;
         top: 0.5rem;
         left: 50%;
         transform: translateX(-50%);
@@ -47,7 +45,6 @@ import Button from './Button.astro';
                 margin-left: 4px;
             }
             h3{
-                @extend .poppins-semibold;
                 padding-left: 0.75rem;
                 font-size: 1.25rem;
             }
@@ -61,7 +58,6 @@ import Button from './Button.astro';
                 align-items: center;
                 a{
                     text-decoration: none;
-                    @extend .poppins-semibold;
                     color: #000;
                     opacity: 0.5;
                     &:hover{

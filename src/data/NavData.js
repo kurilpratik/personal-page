@@ -1,15 +1,15 @@
 const navData = [
     {
         title: 'Home',
-        href: '/'
-    },
-    {
-        title: 'Projects',
-        href: '#projects'
+        href: '/#home'
     },
     {
         title: 'About',
         href: '#about'
+    },
+    {
+        title: 'Projects',
+        href: '#projects'
     },
     {
         title: 'Goals',
