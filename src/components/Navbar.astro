@@ -4,10 +4,11 @@ import NavLink from './NavLink.astro';
 import Button from './Button.astro';
 ---
 <nav>
-    <div class="logo">
-        <h3>Pratik Kuril</h3>
+    <div class="logo flex justify-center items-center">
+        <img src="/src/assets/logo.svg" alt="Logo">
+        <h3 class="text- l">Pratik Kuril</h3>
     </div>
-    <ul>
+    <ul> 
         {
             NavData.map((item) => (
                 <li>
@@ -41,9 +42,14 @@ import Button from './Button.astro';
         z-index: 100;
         background-color: #fff;
         .logo{
+            img{
+                border-radius: 50%;
+                margin-left: 4px;
+            }
             h3{
                 @extend .poppins-semibold;
-                padding-left: 1rem;
+                padding-left: 0.75rem;
+                font-size: 1.25rem;
             }
         }
         ul{
