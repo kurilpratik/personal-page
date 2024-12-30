@@ -1,4 +1,5 @@
 ---
+import Navbar from "../components/Navbar.astro";
 import MainHead from "./MainHead.astro";
 
 interface Props {
@@ -17,6 +18,7 @@ const {
 	<MainHead title={title} description={description}/>
 	<body>
 		<main class="container">
+			<Navbar />
 			<slot />
 		</main>
 	</body>
