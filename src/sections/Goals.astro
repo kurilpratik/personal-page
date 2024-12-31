@@ -1,0 +1,42 @@
+---
+import { isRenderTemplateResult } from 'astro/runtime/server/render/astro/render-template.js';
+import ListItems from '../data/ListItems';
+
+---
+<section id="goals"  class="pt-24 pb-24 sm:px-4 w-[100%]">
+    <h1 class="font-semibold text-3xl text-center w-full mb-24 sm:text-xl sm:mb-16">You'll catch me doing<br>a combo of these things:</h1>
+    <div class="flex justify-center">
+        {
+            ListItems.map((item) => (
+            <section class="h-[15rem] w-[16rem] border-0 rounded-xl" style={`transform: rotate(${item.tilt})`} id="card">
+                <div class="" style={`background-color: ${item.color}`}>
+                    <h3 class="font-semibold p-2 text-center" style={`color: ${item.darkerColor}`}>{item.title}</h3>
+                </div>
+                <ul class="p-4">
+                    {
+                        item.arr.map((i) => (
+                            <li class="mb-2 after:content-[] after:h-[1px] after:w-[10rem] after:bg-[#E5E5E5] after:absolute after:bottom-0 after:left-0">{i}</li>
+                            // <div class="content-[] h-[1px] w-[10rem] bg-[#E5E5E5] absolute bottom-0 left-0"></div>
+                        ))
+                    }
+                </ul>
+            </section>
+            ))
+            
+        }
+    </div>
+    <p class="caption text-gray-400 rotate-6 float-right sm:float-none sm:mt-20 sm:text-center">Why be a Captain<br>when you can be a Pirate?</p>
+
+</section>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&display=swap');
+    .caption {
+        font-family: "Playwrite BE VLG", serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+    }
+    #card{
+        box-shadow: rgba(49, 49, 49, 0.15) -1.95px -1.95px 2.6px;
+    }
+</style>

@@ -1,0 +1,18 @@
+---
+const {
+    title,
+    color,
+    arr,
+    tilt
+} = Astro.props;
+---
+<section class="h-[20rem] w-[16rem] border rounded-2xl" style={`transform: rotate(${tilt})`} >
+    <div class="" style={`background-color: ${color}`}>
+        <h3>{title}</h3>
+    </div>
+</section>
+<style>
+    section{
+        box-shadow: rgba(49, 49, 49, 0.15) -1.95px -1.95px 2.6px;
+    }
+</style>
