@@ -1,0 +1,29 @@
+---
+const {
+    width,
+    imgsrc,
+    alt,
+    tilt,
+    caption
+} = Astro.props;
+
+
+---
+<section class="h-auto bg-white max-w-md" style={`width: ${width}`}  >
+    <img src={imgsrc} alt={alt} class="p-4 w-full h-auto object-contain pb-12" style={`transform: rotate(${tilt})`}>
+    <p class="mt-[-2.25rem] text-center caption" style={`transform: rotate(${tilt})`}>{caption}</p>
+</section>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&display=swap');
+    .caption {
+        font-family: "Playwrite BE VLG", serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+    }
+
+    img{
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    }
+</style>
