@@ -24,19 +24,16 @@ import Button from './Button.astro';
         </div>
     </ul>
 </nav>
-<div id="sidebar" class="h-screen w-[80%] fixed right-0 top-0 bg-white z-50 hidden">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 mt-4 absolute right-4" id="close">
+<div id="sidebar" class="h-[15vh] w-[100%] fixed right-0 bottom-[-15vh] bg-white z-50 transition-transform">
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 mt-4 absolute right-4" id="close">
         <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-    </svg>      
-    <ul class="w-[100%] flex justify-center items-center flex-col h-screen gap-6 "> 
+    </svg>       -->
+    <ul class="w-[100%] p-6 flex gap-2"> 
         {
             NavData.map((item) => (
-                <li class=""> 
-                    <NavLink href={item.href} class:list={'font-semibold text-base text-black opacity-50 hover:opacity-100'}>{item.title}</NavLink>
-                </li>
+                    <NavLink href={item.href} class:list={'font-semibold text-base text-black border rounded-lg p-4 bg-gray-50 w-[100%] text-center'}>{item.title}</NavLink>
             ))
         }
-        <Button class="primary-button">Say Hello!</Button>
     </ul>
 </div>
 
@@ -83,16 +80,25 @@ import Button from './Button.astro';
     const close = document.getElementById('close');
     const menu = document.getElementById('sidebar');
 
-    open.addEventListener('click', () => {
-        console.log('open clicked')
-        menu.classList.remove('hidden');
-        // menu.classList.add('block');
-    })
+    // open.addEventListener('click', () => {
+    //     console.log('open clicked')
+    //     menu.classList.remove('hidden');
+    //     // menu.classList.add('block');
+    // })
 
-    close?.addEventListener('click', () => {
-        console.log('close clicked');
-        menu.classList.add('hidden');
-    })
-    
+    // close?.addEventListener('click', () => {
+    //     console.log('close clicked');
+    //     menu.classList.add('hidden');
+    // })
+
+    open?.addEventListener('click', () => {
+        console.log('clicked')
+        if(menu?.classList.contains('-translate-y-full')){
+            menu?.classList.remove('-translate-y-full');
+        }
+        else{
+            menu?.classList.add('-translate-y-full');
+        }
+    })    
     
 </script>
