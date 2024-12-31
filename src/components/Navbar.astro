@@ -3,22 +3,42 @@ import NavData from '../data/NavData';
 import NavLink from './NavLink.astro';
 import Button from './Button.astro';
 ---
-<nav class="w-[80%] flex justify-between p-1 bg-white fixed z-50 mt-4 top-2">
+<nav class="w-[90%] md:w-[80%] flex justify-between p-1 bg-white fixed z-50 mt-4 top-2">
     <div class="logo flex items-center" >
         <img src="/src/assets/logo.svg" alt="Logo" class="animate-spin">
-        <h3 class="text-lg font-semibold">Pratik Kuril</h3>
+        <h3 class="text-md whitespace-nowrap md:text-lg font-semibold">Pratik Kuril</h3>
     </div>
-    <ul> 
+    <ul class="flex gap-4">
         {
             NavData.map((item) => (
-                <li> 
+                <li class=""> 
+                    <NavLink href={item.href} class:list={'font-semibold text-base text-black opacity-50 hover:opacity-100 hidden md:inline-block'}>{item.title}</NavLink>
+                </li>
+            ))
+        }
+        <Button class="primary-button whitespace-nowrap text-sm md:text-md mr-0">Say Hello!</Button>
+        <div class="md:hidden pr-2 ml-[-0.5rem]" id="open">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 16" stroke-width="1.5" stroke="currentColor" class="size-8 md:siz-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+            </svg>              
+        </div>
+    </ul>
+</nav>
+<div id="sidebar" class="h-screen w-[80%] fixed right-0 top-0 bg-white z-50 hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 mt-4 absolute right-4" id="close">
+        <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+    </svg>      
+    <ul class="w-[100%] flex justify-center items-center flex-col h-screen gap-6 "> 
+        {
+            NavData.map((item) => (
+                <li class=""> 
                     <NavLink href={item.href} class:list={'font-semibold text-base text-black opacity-50 hover:opacity-100'}>{item.title}</NavLink>
                 </li>
             ))
         }
         <Button class="primary-button">Say Hello!</Button>
     </ul>
-</nav>
+</div>
 
 <style is:global>
 
@@ -40,8 +60,6 @@ import Button from './Button.astro';
         }
         ul{
             list-style: none;
-            display: flex;
-            gap: 1.5rem;
             li{
                 display: flex;
                 align-items: center;
@@ -54,4 +72,27 @@ import Button from './Button.astro';
     .active{
         opacity: 1;
     }
+    #sidebar{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
 </style>
+
+<script>
+
+    const open = document.getElementById('open');
+    const close = document.getElementById('close');
+    const menu = document.getElementById('sidebar');
+
+    open.addEventListener('click', () => {
+        console.log('open clicked')
+        menu.classList.remove('hidden');
+        // menu.classList.add('block');
+    })
+
+    close?.addEventListener('click', () => {
+        console.log('close clicked');
+        menu.classList.add('hidden');
+    })
+    
+    
+</script>
