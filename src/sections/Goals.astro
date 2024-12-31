@@ -1,11 +1,9 @@
 ---
-import { isRenderTemplateResult } from 'astro/runtime/server/render/astro/render-template.js';
 import ListItems from '../data/ListItems';
-
 ---
 <section id="goals"  class="pt-24 pb-24 sm:px-4 w-[100%]">
     <h1 class="font-semibold text-3xl text-center w-full mb-24 sm:text-xl sm:mb-16">You'll catch me doing<br>a combo of these things:</h1>
-    <div class="flex justify-center">
+    <div class="flex sm:justify-center pl-24 sm:pl-0">
         {
             ListItems.map((item) => (
             <section class="h-[15rem] w-[16rem] border-0 rounded-xl" style={`transform: rotate(${item.tilt})`} id="card">
@@ -25,7 +23,7 @@ import ListItems from '../data/ListItems';
             
         }
     </div>
-    <p class="caption text-gray-400 rotate-6 float-right sm:float-none sm:mt-20 sm:text-center">Why be a Captain<br>when you can be a Pirate?</p>
+    <p class="caption text-gray-400 rotate-6 float-right mt-[-7rem] sm:float-none sm:mt-20 sm:text-center">Why be a Captain<br>when you can be a Pirate?</p>
 
 </section>
 <style>

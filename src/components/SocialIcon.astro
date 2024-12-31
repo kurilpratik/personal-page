@@ -1,0 +1,10 @@
+---
+const {
+    title,
+    img,
+    link
+} = Astro.props;
+---
+<a href={link} class="border rounded-full border-gray-300 p-3 hover:bg-gray-100">
+    <img src={img} alt={title} class="h-4">
+</a>

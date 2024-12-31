@@ -2,8 +2,6 @@
 import NavData from '../data/NavData';
 import NavLink from './NavLink.astro';
 import Button from './Button.astro';
-
-import logo from '../assets/logo.svg';
 ---
 <nav class="w-[80%] sm:w-[85%] flex justify-between p-1 bg-white fixed z-50 mt-4 top-2">
     <div class="logo flex items-center" >
@@ -18,7 +16,7 @@ import logo from '../assets/logo.svg';
                 </li>
             ))
         }
-        <Button class="primary-button whitespace-nowrap text-md mr-0 bg-purple-900">Say Hello!</Button>
+        <Button class="primary-button whitespace-nowrap text-md mr-0 bg-purple-900" href="#contact">Say Hello!</Button>
         <div class="hidden md:block pr-2 ml-[-0.5rem]" id="open">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 16" stroke-width="1.5" stroke="currentColor" class="size-8 md:siz-8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
