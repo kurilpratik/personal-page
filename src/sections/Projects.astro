@@ -1,12 +1,18 @@
 ---
+import ProjectCard from "@/components/ProjectCard.astro";
+import ProjectData from '../data/Projects';
 
 ---
-<section id="projects">
-    <p>projects</p>
+<section id="projects" class="pt-24 pb-24 sm:px-4">
+    <h1 class="font-semibold text-3xl text-center w-full mb-24">Selected Projects from<br>2023 to Present</h1>
+    {
+        ProjectData.map((proj) => (
+            <ProjectCard title={proj.title} description={proj.description} imgsrc={proj.imgsrc} link={proj.link} />
+        ))
+    }
 </section>
 <style>
     section{
-        height: 100vh;
         width: 100%;
     }
 </style>

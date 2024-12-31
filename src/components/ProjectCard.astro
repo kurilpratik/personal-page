@@ -1,0 +1,26 @@
+---
+const {
+    title,
+    description,
+    imgsrc,
+    link
+} = Astro.props;
+
+import Button from "./Button.astro";
+---
+<section class="h-[60vh] w-[100%] flex gap-2 mb-8 sm:flex-col sm:mb-10 sm:h-auto">
+    <div class=" w-[40%] border rounded-2xl border-gray-300 relative sm:w-[100%] sm:min-h-fit">
+        <h1 class="text-2xl font-semibold p-6">{title}</h1>
+        <p class="px-6 w-[75%] sm:w-[90%] sm:mb-20">{description}</p>
+        <Button href={link} target="_blank" class="secondary-button font-semibold m-2 absolute bottom-0">
+            View Project
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+            </svg>              
+        </Button>
+    </div>
+    <img src={imgsrc} alt="" class="h-[100%] w-[60%] rounded-2xl border border-gray-300 object-cover sm:w-[100%]">
+</section>
+
+<style>
+</style>
