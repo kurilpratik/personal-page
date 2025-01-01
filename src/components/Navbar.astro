@@ -3,7 +3,7 @@ import NavData from '../data/NavData';
 import NavLink from './NavLink.astro';
 import Button from './Button.astro';
 ---
-<nav class="w-[80%] sm:w-[85%] flex justify-between p-1 bg-white fixed z-50 mt-4 top-2">
+<nav class="w-[80%] sm:w-[85%] flex justify-between p-1 bg-white fixed z-50 mt-4 top-2 xs:w-[95%]">
     <a href="/#home" class="logo flex items-center" >
         <img src="/logo.svg" alt="Logo" class="animate-spin">
         <h3 class="text-lg whitespace-nowrap sm:text-md font-semibold">Pratik Kuril</h3>
@@ -31,7 +31,7 @@ import Button from './Button.astro';
     <ul class="w-[100%] p-6 flex gap-2"> 
         {
             NavData.map((item) => (
-                    <NavLink href={item.href} class:list={'font-semibold text-base text-black border rounded-lg p-4 bg-gray-50 w-[100%] text-center'}>{item.title}</NavLink>
+                    <NavLink href={item.href} class:list={'font-semibold text-base text-black border rounded-lg p-4 bg-gray-50 w-[100%] text-center xs:p-2'}>{item.title}</NavLink>
             ))
         }
     </ul>

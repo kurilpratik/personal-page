@@ -22,7 +22,10 @@ export default {
     			},
     			sm: {
     				max: '639px'
-    			}
+    			},
+				xs: {
+					max: '400px'
+				}
     		},
     		colors: {
     			primary: {
